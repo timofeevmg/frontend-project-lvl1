@@ -4,7 +4,7 @@ import greetUser from '../src/greetUser.js';
 import announceRule from '../src/announceRule.js';
 import playGame from '../src/index.js';
 import getRandomNum from '../src/getRandomNum.js';
-import gcd from '../src/gcd.js';
+import findGcd from '../src/findGcd.js';
 
 const getTasksAndCorrectAnswers = () => {
   const tasks = [];
@@ -15,7 +15,7 @@ const getTasksAndCorrectAnswers = () => {
     const numB = getRandomNum();
 
     tasks.push(`${numA} ${numB}`);
-    correctAnswers.push(gcd(numA, numB).toString());
+    correctAnswers.push(findGcd(numA, numB).toString());
   }
 
   return [tasks, correctAnswers];
