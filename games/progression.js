@@ -1,5 +1,5 @@
 import playGame from '../src/index.js';
-import getRandomNum from '../src/getRandomNum.js'; // ???
+import getRandomNum from '../src/getRandomNum.js';
 import getRandomNumFromIntervalIncl from '../src/getRandomNumFromIntervalIncl.js';
 import getProgressionSequence from '../src/getProgressionSequence.js';
 
