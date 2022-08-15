@@ -1,6 +1,14 @@
 import getAnswer from './getAnswer.js';
 
-export default (userName, tasks, correctAnswers) => {
+export default (rule, tasks, correctAnswers) => {
+  console.log('Welcome to the Brain Games!');
+
+  const userName = getAnswer('May I have your name? ');
+
+  console.log(`Hello, ${userName}!`);
+
+  console.log(rule);
+
   let userAnswer;
 
   const playRound = (task, correctAnswer) => {

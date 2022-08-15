@@ -1,7 +1,3 @@
-import welcome from '../src/welcome.js';
-import getUserName from '../src/getUserName.js';
-import greetUser from '../src/greetUser.js';
-import announceRule from '../src/announceRule.js';
 import playGame from '../src/index.js';
 import getRandomNum from '../src/getRandomNum.js';
 import findGcd from '../src/findGcd.js';
@@ -22,15 +18,9 @@ const getTasksAndCorrectAnswers = () => {
 };
 
 export default () => {
-  welcome('Welcome to the Brain Games!');
-
-  const userName = getUserName('May I have your name? ');
-
-  greetUser(`Hello, ${userName}!`);
-
-  announceRule('Find the greatest common divisor of given numbers.');
+  const rule = 'Find the greatest common divisor of given numbers.';
 
   const [tasks, correctAnswers] = getTasksAndCorrectAnswers();
 
-  playGame(userName, tasks, correctAnswers);
+  playGame(rule, tasks, correctAnswers);
 };
