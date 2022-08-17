@@ -1,6 +1,6 @@
-import playGame from '../src/index.js';
-import getRandomNum from '../src/getRandomNum.js';
-import isPrime from '../src/isPrime.js';
+import playGame from '../index.js';
+import getRandomNum from '../getRandomNum.js';
+import isPrime from '../isPrime.js';
 
 const getTasksAndCorrectAnswers = () => {
   const tasks = [];

@@ -1,7 +1,7 @@
-import playGame from '../src/index.js';
-import getRandomNum from '../src/getRandomNum.js';
-import getRandomNumFromIntervalIncl from '../src/getRandomNumFromIntervalIncl.js';
-import getProgressionSequence from '../src/getProgressionSequence.js';
+import playGame from '../index.js';
+import getRandomNum from '../getRandomNum.js';
+import getRandomNumFromIntervalIncl from '../getRandomNumFromIntervalIncl.js';
+import getProgressionSequence from '../getProgressionSequence.js';
 
 const getTasksAndCorrectAnswers = () => {
   const tasks = [];

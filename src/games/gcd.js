@@ -1,6 +1,6 @@
-import playGame from '../src/index.js';
-import getRandomNum from '../src/getRandomNum.js';
-import findGcd from '../src/findGcd.js';
+import playGame from '../index.js';
+import getRandomNum from '../getRandomNum.js';
+import findGcd from '../findGcd.js';
 
 const getTasksAndCorrectAnswers = () => {
   const tasks = [];
