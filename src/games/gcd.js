@@ -1,6 +1,20 @@
 import playGame from '../index.js';
 import getRandomNum from '../getRandomNum.js';
-import findGcd from '../findGcd.js';
+
+const calculateGcd = (a, b) => {
+  let x = a;
+  let y = b;
+
+  while (x !== 0 && y !== 0) {
+    if (x > y) {
+      x %= y;
+    } else {
+      y %= x;
+    }
+  }
+
+  return x + y;
+};
 
 const getTasksAndCorrectAnswers = () => {
   const tasks = [];
@@ -11,7 +25,7 @@ const getTasksAndCorrectAnswers = () => {
     const numB = getRandomNum();
 
     tasks.push(`${numA} ${numB}`);
-    correctAnswers.push(findGcd(numA, numB).toString());
+    correctAnswers.push(calculateGcd(numA, numB).toString());
   }
 
   return [tasks, correctAnswers];
