@@ -6,6 +6,12 @@
 
 5 mathematical games to warm-up your mind skills!
 
+1. **brain-even** - guess number is even or not.
+2. **brain-calc** - count multiplication, addition or division examples.
+3. **brain-gcd** - guess the greatest common divisor of 2 numbers.
+4. **brain-progression** - guess the hidden number of arithmetic growing progression.
+5. **brain-prime** - guess number is prime or not.
+
 ## System requirements
 
 - Linux family OS or MacOS;
@@ -16,7 +22,7 @@
 
 ````cd frontend-project-lvl1````
 
-````make install````
+````make install````(sudo possibly required)
 
 ## How to play
 
