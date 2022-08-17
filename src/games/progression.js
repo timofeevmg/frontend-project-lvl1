@@ -1,7 +1,24 @@
 import playGame from '../index.js';
 import getRandomNum from '../getRandomNum.js';
-import getRandomNumFromIntervalIncl from '../getRandomNumFromIntervalIncl.js';
-import getProgressionSequence from '../getProgressionSequence.js';
+
+const getRandomNumFromIntervalIncl = (min, max) => {
+  const range = max - min + 1;
+
+  return Math.floor(Math.random() * range + min);
+};
+
+const getProgressionSequence = (size, step, begin) => {
+  const progression = [];
+  let elem = begin;
+
+  for (let i = 0; i < size; i += 1) {
+    progression.push(elem);
+
+    elem += step;
+  }
+
+  return progression;
+};
 
 const getTasksAndCorrectAnswers = () => {
   const tasks = [];
