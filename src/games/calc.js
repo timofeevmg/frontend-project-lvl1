@@ -1,6 +1,15 @@
 import playGame from '../index.js';
 import getRandomNum from '../getRandomNum.js';
-import getRandomSymbol from '../getRandomSymbol.js';
+
+const getRandomSymbol = (symbols) => {
+  const size = symbols.length;
+
+  const randomNum = getRandomNum();
+
+  const randomIdx = randomNum % size;
+
+  return symbols[randomIdx];
+};
 
 const getTasksAndCorrectAnswers = () => {
   const tasks = [];
