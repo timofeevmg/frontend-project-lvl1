@@ -1,25 +1,26 @@
 import playGame from '../index.js';
-import getRandomNum from '../getRandomNum.js';
+import getRandomNumbersSequence from '../getRandomNumbersSequence.js';
 
 const isEven = (number) => number % 2 === 0;
 
-const getTasksAndCorrectAnswers = () => {
-  const tasks = [];
+const getCorrectAnswers = (tasks) => {
   const correctAnswers = [];
 
-  for (let i = 0; i <= 2; i += 1) {
-    tasks.push(getRandomNum());
-
+  for (let i = 0; i < tasks.length; i += 1) {
     correctAnswers.push(isEven(tasks[i]) ? 'yes' : 'no');
   }
 
-  return [tasks, correctAnswers];
+  return correctAnswers;
 };
 
 export default () => {
   const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  const [tasks, correctAnswers] = getTasksAndCorrectAnswers();
+  const tasksCount = 3;
+
+  const tasks = getRandomNumbersSequence(tasksCount);
+
+  const correctAnswers = getCorrectAnswers(tasks);
 
   playGame(rule, tasks, correctAnswers);
 };

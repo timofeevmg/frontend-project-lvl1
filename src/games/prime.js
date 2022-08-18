@@ -1,5 +1,5 @@
 import playGame from '../index.js';
-import getRandomNum from '../getRandomNum.js';
+import getRandomNumbersSequence from '../getRandomNumbersSequence.js';
 
 const isPrime = (num) => {
   if (num < 2) return false;
@@ -12,23 +12,24 @@ const isPrime = (num) => {
   return true;
 };
 
-const getTasksAndCorrectAnswers = () => {
-  const tasks = [];
+const getCorrectAnswers = (tasks) => {
   const correctAnswers = [];
 
-  for (let i = 0; i <= 2; i += 1) {
-    tasks.push(getRandomNum());
-
+  for (let i = 0; i < tasks.length; i += 1) {
     correctAnswers.push(isPrime(tasks[i]) ? 'yes' : 'no');
   }
 
-  return [tasks, correctAnswers];
+  return correctAnswers;
 };
 
 export default () => {
   const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  const [tasks, correctAnswers] = getTasksAndCorrectAnswers();
+  const tasksCount = 3;
+
+  const tasks = getRandomNumbersSequence(tasksCount);
+
+  const correctAnswers = getCorrectAnswers(tasks);
 
   playGame(rule, tasks, correctAnswers);
 };
