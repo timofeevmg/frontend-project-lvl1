@@ -24,6 +24,8 @@
 
 ````make install````(sudo possibly required)
 
+[![asciicast](https://asciinema.org/a/515676.svg)](https://asciinema.org/a/515676)
+
 ## How to play
 
 #### Brain-even
