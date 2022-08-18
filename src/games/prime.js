@@ -16,9 +16,9 @@ const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const tasksCount = 3;
 
-export default () => {
-  const tasks = getRandomNumbersSequence(tasksCount);
+const tasks = getRandomNumbersSequence(tasksCount);
 
+export default () => {
   const correctAnswers = tasks.map((num) => (isPrime(num) ? 'yes' : 'no'));
 
   playGame(rule, tasks, correctAnswers);

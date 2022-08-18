@@ -7,9 +7,9 @@ const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const tasksCount = 3;
 
-export default () => {
-  const tasks = getRandomNumbersSequence(tasksCount);
+const tasks = getRandomNumbersSequence(tasksCount);
 
+export default () => {
   const correctAnswers = tasks.map((num) => (isEven(num) ? 'yes' : 'no'));
 
   playGame(rule, tasks, correctAnswers);
