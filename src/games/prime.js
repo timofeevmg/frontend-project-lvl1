@@ -22,11 +22,11 @@ const getCorrectAnswers = (tasks) => {
   return correctAnswers;
 };
 
+const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const tasksCount = 3;
+
 export default () => {
-  const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
-  const tasksCount = 3;
-
   const tasks = getRandomNumbersSequence(tasksCount);
 
   const correctAnswers = getCorrectAnswers(tasks);
