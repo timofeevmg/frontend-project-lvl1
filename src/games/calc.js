@@ -3,9 +3,7 @@ import { getRandomNum } from '../utils.js';
 
 const getRandomSymbol = (symbols) => {
   const size = symbols.length;
-
   const randomNum = getRandomNum();
-
   const randomIdx = randomNum % size;
 
   return symbols[randomIdx];

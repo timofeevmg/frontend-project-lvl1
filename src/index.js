@@ -6,7 +6,6 @@ export default (rule, tasks, correctAnswers) => {
   const userName = readlineSync.question('May I have your name? ');
 
   console.log(`Hello, ${userName}!`);
-
   console.log(rule);
 
   let userAnswer;
@@ -23,6 +22,7 @@ export default (rule, tasks, correctAnswers) => {
     if (!playRound(tasks[i], correctAnswers[i])) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswers[i]}'.`);
       console.log(`Let's try again, ${userName}!`);
+
       return;
     }
 

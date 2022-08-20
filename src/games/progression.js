@@ -26,13 +26,9 @@ const getTasksAndCorrectAnswers = () => {
 
   for (let i = 0; i <= 2; i += 1) {
     const size = getRandomNumFromIntervalIncl(5, 10);
-
     const step = getRandomNum();
-
     const begin = getRandomNum();
-
     const progression = getProgressionSequence(size, step, begin);
-
     const idxToHide = getRandomNumFromIntervalIncl(0, size - 1);
 
     correctAnswers.push(progression[idxToHide].toString());
