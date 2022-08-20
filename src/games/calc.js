@@ -20,8 +20,10 @@ const getTasksAndCorrectAnswers = () => {
         return numA + numB;
       case '-':
         return numA - numB;
-      default:
+      case '*':
         return numA * numB;
+      default:
+        throw new Error(`Unknown operand: '${operand}'!`);
     }
   };
 
