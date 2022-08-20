@@ -41,7 +41,7 @@ const getTasksAndCorrectAnswers = () => {
 export default () => {
   const rule = 'What is the result of the expression?';
 
-  const [tasks, correctAnswers] = getTasksAndCorrectAnswers();
+  const tasksAndAnswers = getTasksAndCorrectAnswers();
 
-  playGame(rule, tasks, correctAnswers);
+  playGame(rule, tasksAndAnswers);
 };

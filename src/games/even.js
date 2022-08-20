@@ -10,5 +10,5 @@ const tasks = getRandomNumbersSequence(tasksCount);
 export default () => {
   const correctAnswers = tasks.map((num) => (isEven(num) ? 'yes' : 'no'));
 
-  playGame(rule, tasks, correctAnswers);
+  playGame(rule, [tasks, correctAnswers]);
 };

@@ -44,7 +44,7 @@ const getTasksAndCorrectAnswers = () => {
 export default () => {
   const rule = 'What number is missing in the progression?';
 
-  const [tasks, correctAnswers] = getTasksAndCorrectAnswers();
+  const tasksAndAnswers = getTasksAndCorrectAnswers();
 
-  playGame(rule, tasks, correctAnswers);
+  playGame(rule, tasksAndAnswers);
 };
