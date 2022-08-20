@@ -32,9 +32,9 @@ const getTasksAndCorrectAnswers = () => {
 };
 
 export default () => {
-  const rule = 'Find the greatest common divisor of given numbers.';
+  const description = 'Find the greatest common divisor of given numbers.';
 
   const tasksAndAnswers = getTasksAndCorrectAnswers();
 
-  playGame(rule, tasksAndAnswers);
+  playGame(description, tasksAndAnswers);
 };

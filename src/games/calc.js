@@ -39,9 +39,9 @@ const getTasksAndCorrectAnswers = () => {
 };
 
 export default () => {
-  const rule = 'What is the result of the expression?';
+  const description = 'What is the result of the expression?';
 
   const tasksAndAnswers = getTasksAndCorrectAnswers();
 
-  playGame(rule, tasksAndAnswers);
+  playGame(description, tasksAndAnswers);
 };

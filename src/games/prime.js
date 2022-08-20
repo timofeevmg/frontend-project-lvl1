@@ -13,12 +13,12 @@ const isPrime = (num) => {
   return true;
 };
 
-const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const tasksCount = 3;
 const tasks = getRandomNumbersSequence(tasksCount);
 
 export default () => {
   const correctAnswers = tasks.map((num) => (isPrime(num) ? 'yes' : 'no'));
 
-  playGame(rule, [tasks, correctAnswers]);
+  playGame(description, [tasks, correctAnswers]);
 };

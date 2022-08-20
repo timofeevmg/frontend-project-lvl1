@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
 
-export default (rule, [tasks, correctAnswers]) => {
+export default (description, [tasks, correctAnswers]) => {
   console.log('Welcome to the Brain Games!');
 
   const userName = readlineSync.question('May I have your name? ');
 
   console.log(`Hello, ${userName}!`);
-  console.log(rule);
+  console.log(description);
 
   let userAnswer;
 
