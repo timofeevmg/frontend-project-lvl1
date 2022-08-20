@@ -10,16 +10,12 @@ export default (description, [tasks, correctAnswers]) => {
 
   let userAnswer;
 
-  const playRound = (task, correctAnswer) => {
-    console.log(`Question: ${task}`);
+  for (let i = 0; i <= 2; i += 1) {
+    console.log(`Question: ${tasks[i]}`);
 
     userAnswer = readlineSync.question('Your answer: ');
 
-    return userAnswer === correctAnswer;
-  };
-
-  for (let i = 0; i <= 2; i += 1) {
-    if (!playRound(tasks[i], correctAnswers[i])) {
+    if (userAnswer !== correctAnswers[i]) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswers[i]}'.`);
       console.log(`Let's try again, ${userName}!`);
 
