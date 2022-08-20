@@ -9,10 +9,6 @@ const getRandomSymbol = (symbols) => {
 };
 
 const getTasksAndCorrectAnswers = () => {
-  const tasks = [];
-  const correctAnswers = [];
-  const operands = ['+', '-', '*'];
-
   const calculateAnswer = (numA, numB, operand) => {
     switch (operand) {
       case '+':
@@ -25,6 +21,10 @@ const getTasksAndCorrectAnswers = () => {
         throw new Error(`Unknown operand: '${operand}'!`);
     }
   };
+
+  const tasks = [];
+  const correctAnswers = [];
+  const operands = ['+', '-', '*'];
 
   for (let i = 0; i <= 2; i += 1) {
     const numA = getRandomNum();
