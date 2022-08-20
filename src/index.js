@@ -1,9 +1,9 @@
-import getAnswer from './getAnswer.js';
+import readlineSync from 'readline-sync';
 
 export default (rule, tasks, correctAnswers) => {
   console.log('Welcome to the Brain Games!');
 
-  const userName = getAnswer('May I have your name? ');
+  const userName = readlineSync.question('May I have your name? ');
 
   console.log(`Hello, ${userName}!`);
 
@@ -14,7 +14,7 @@ export default (rule, tasks, correctAnswers) => {
   const playRound = (task, correctAnswer) => {
     console.log(`Question: ${task}`);
 
-    userAnswer = getAnswer('Your answer: ');
+    userAnswer = readlineSync.question('Your answer: ');
 
     return userAnswer === correctAnswer;
   };
