@@ -1,4 +1,4 @@
-const getRandomNum = (maxNumLimit = 100) => Math.round(Math.random() * maxNumLimit);
+const getRandomNum = (maxNumLimit = 100) => Math.floor(Math.random() * maxNumLimit);
 
 const getRandomNumbersSequence = (count, maxNumLimit = 100) => {
   const sequence = [];
