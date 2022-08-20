@@ -1,5 +1,5 @@
 import playGame from '../index.js';
-import getRandomNum from '../getRandomNum.js';
+import { getRandomNum } from '../utils.js';
 
 const getRandomNumFromIntervalIncl = (min, max) => {
   const range = max - min + 1;
