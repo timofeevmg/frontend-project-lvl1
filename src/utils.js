@@ -1,10 +1,10 @@
-const getRandomNum = () => Math.round(Math.random() * 100);
+const getRandomNum = (maxNumLimit = 100) => Math.round(Math.random() * maxNumLimit);
 
-const getRandomNumbersSequence = (count) => {
+const getRandomNumbersSequence = (count, maxNumLimit = 100) => {
   const sequence = [];
 
   for (let i = 0; i < count; i += 1) {
-    sequence.push(getRandomNum());
+    sequence.push(getRandomNum(maxNumLimit));
   }
 
   return sequence;
