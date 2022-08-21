@@ -8,20 +8,20 @@ const getRandomSymbol = (symbols) => {
   return symbols[randomIdx];
 };
 
-const getTasksAndCorrectAnswers = () => {
-  const calculateAnswer = (numA, numB, operand) => {
-    switch (operand) {
-      case '+':
-        return numA + numB;
-      case '-':
-        return numA - numB;
-      case '*':
-        return numA * numB;
-      default:
-        throw new Error(`Unknown operand: '${operand}'!`);
-    }
-  };
+const calculate = (numA, numB, operand) => {
+  switch (operand) {
+    case '+':
+      return numA + numB;
+    case '-':
+      return numA - numB;
+    case '*':
+      return numA * numB;
+    default:
+      throw new Error(`Unknown operand: '${operand}'!`);
+  }
+};
 
+const getTasksAndCorrectAnswers = () => {
   const tasks = [];
   const correctAnswers = [];
   const operands = ['+', '-', '*'];
@@ -32,7 +32,7 @@ const getTasksAndCorrectAnswers = () => {
     const randomOperand = getRandomSymbol(operands);
 
     tasks.push(`${numA} ${randomOperand} ${numB}`);
-    correctAnswers.push(calculateAnswer(numA, numB, randomOperand).toString());
+    correctAnswers.push(calculate(numA, numB, randomOperand).toString());
   }
 
   return [tasks, correctAnswers];
