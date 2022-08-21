@@ -2,8 +2,7 @@ import playGame from '../index.js';
 import { getRandomNum } from '../utils.js';
 
 const getRandomSymbol = (symbols) => {
-  const size = symbols.length;
-  const randomIdx = getRandomNum(size);
+  const randomIdx = getRandomNum(symbols.length);
 
   return symbols[randomIdx];
 };
