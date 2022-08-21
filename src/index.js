@@ -8,12 +8,10 @@ export default (description, [tasks, correctAnswers]) => {
   console.log(`Hello, ${userName}!`);
   console.log(description);
 
-  let userAnswer;
-
   for (let i = 0; i <= 2; i += 1) {
     console.log(`Question: ${tasks[i]}`);
 
-    userAnswer = readlineSync.question('Your answer: ');
+    const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer !== correctAnswers[i]) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswers[i]}'.`);
