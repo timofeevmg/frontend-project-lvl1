@@ -8,13 +8,15 @@ export default (description, [tasks, correctAnswers]) => {
   console.log(`Hello, ${userName}!`);
   console.log(description);
 
-  for (let i = 0; i <= 2; i += 1) {
-    console.log(`Question: ${tasks[i]}`);
+  const roundsCount = 3;
+
+  for (let round = 1; round <= roundsCount; round += 1) {
+    console.log(`Question: ${tasks[round - 1]}`);
 
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer !== correctAnswers[i]) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswers[i]}'.`);
+    if (userAnswer !== correctAnswers[round - 1]) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswers[round - 1]}'.`);
       console.log(`Let's try again, ${userName}!`);
 
       return;
