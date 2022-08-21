@@ -1,10 +1,11 @@
 import playGame from '../index.js';
 import { getRandomNum } from '../utils.js';
 
-const getRandomSymbol = (symbols) => {
-  const randomIdx = getRandomNum(symbols.length);
+const getRandomOperand = () => {
+  const operands = ['+', '-', '*'];
+  const randomIdx = getRandomNum(operands.length);
 
-  return symbols[randomIdx];
+  return operands[randomIdx];
 };
 
 const calculate = (numA, numB, operand) => {
@@ -23,12 +24,11 @@ const calculate = (numA, numB, operand) => {
 const getTasksAndCorrectAnswers = () => {
   const tasks = [];
   const correctAnswers = [];
-  const operands = ['+', '-', '*'];
 
   for (let i = 0; i <= 2; i += 1) {
     const numA = getRandomNum();
     const numB = getRandomNum();
-    const randomOperand = getRandomSymbol(operands);
+    const randomOperand = getRandomOperand();
 
     tasks.push(`${numA} ${randomOperand} ${numB}`);
     correctAnswers.push(calculate(numA, numB, randomOperand).toString());
