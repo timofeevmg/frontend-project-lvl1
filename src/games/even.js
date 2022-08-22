@@ -1,14 +1,13 @@
-import playGame from '../index.js';
+import { roundsCount, playGame } from '../index.js';
 import { getRandomNumbersSequence } from '../utils.js';
 
 const isEven = (number) => number % 2 === 0;
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
-const tasksCount = 3;
-const tasks = getRandomNumbersSequence(tasksCount);
+const questions = getRandomNumbersSequence(roundsCount);
 
 export default () => {
-  const correctAnswers = tasks.map((num) => (isEven(num) ? 'yes' : 'no'));
+  const correctAnswers = questions.map((num) => (isEven(num) ? 'yes' : 'no'));
 
-  playGame(description, [tasks, correctAnswers]);
+  playGame(description, [questions, correctAnswers]);
 };

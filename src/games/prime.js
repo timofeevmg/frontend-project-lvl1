@@ -1,4 +1,4 @@
-import playGame from '../index.js';
+import { roundsCount, playGame } from '../index.js';
 import { getRandomNumbersSequence } from '../utils.js';
 
 const isPrime = (num) => {
@@ -14,11 +14,10 @@ const isPrime = (num) => {
 };
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const tasksCount = 3;
-const tasks = getRandomNumbersSequence(tasksCount);
+const questions = getRandomNumbersSequence(roundsCount);
 
 export default () => {
-  const correctAnswers = tasks.map((num) => (isPrime(num) ? 'yes' : 'no'));
+  const correctAnswers = questions.map((num) => (isPrime(num) ? 'yes' : 'no'));
 
-  playGame(description, [tasks, correctAnswers]);
+  playGame(description, [questions, correctAnswers]);
 };

@@ -1,4 +1,4 @@
-import playGame from '../index.js';
+import { roundsCount, playGame } from '../index.js';
 import { getRandomNum } from '../utils.js';
 
 const getRandomOperand = () => {
@@ -21,26 +21,26 @@ const calculate = (numA, numB, operand) => {
   }
 };
 
-const getTasksAndCorrectAnswers = () => {
-  const tasks = [];
+const getQuestionsAndCorrectAnswers = () => {
+  const questions = [];
   const correctAnswers = [];
 
-  for (let i = 0; i <= 2; i += 1) {
+  for (let round = 1; round <= roundsCount; round += 1) {
     const numA = getRandomNum();
     const numB = getRandomNum();
     const randomOperand = getRandomOperand();
 
-    tasks.push(`${numA} ${randomOperand} ${numB}`);
+    questions.push(`${numA} ${randomOperand} ${numB}`);
     correctAnswers.push(calculate(numA, numB, randomOperand).toString());
   }
 
-  return [tasks, correctAnswers];
+  return [questions, correctAnswers];
 };
 
 export default () => {
   const description = 'What is the result of the expression?';
 
-  const tasksAndAnswers = getTasksAndCorrectAnswers();
+  const questionsAndAnswers = getQuestionsAndCorrectAnswers();
 
-  playGame(description, tasksAndAnswers);
+  playGame(description, questionsAndAnswers);
 };

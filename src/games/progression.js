@@ -1,4 +1,4 @@
-import playGame from '../index.js';
+import { roundsCount, playGame } from '../index.js';
 import { getRandomNum } from '../utils.js';
 
 const getRandomNumFromIntervalIncl = (min, max) => {
@@ -7,11 +7,11 @@ const getRandomNumFromIntervalIncl = (min, max) => {
   return Math.floor(Math.random() * range + min);
 };
 
-const getProgressionSequence = (size, step, begin) => {
+const getProgressionSequence = (length, step, firstElem) => {
   const progression = [];
-  let elem = begin;
+  let elem = firstElem;
 
-  for (let i = 0; i < size; i += 1) {
+  for (let i = 0; i < length; i += 1) {
     progression.push(elem);
 
     elem += step;
@@ -20,31 +20,33 @@ const getProgressionSequence = (size, step, begin) => {
   return progression;
 };
 
-const getTasksAndCorrectAnswers = () => {
-  const tasks = [];
+const getQuestionsAndCorrectAnswers = () => {
+  const questions = [];
   const correctAnswers = [];
+  const minSequenceLength = 5;
+  const maxSequenceLength = 10;
 
-  for (let i = 0; i <= 2; i += 1) {
-    const size = getRandomNumFromIntervalIncl(5, 10);
+  for (let round = 1; round <= roundsCount; round += 1) {
+    const length = getRandomNumFromIntervalIncl(minSequenceLength, maxSequenceLength);
     const step = getRandomNum();
-    const begin = getRandomNum();
-    const progression = getProgressionSequence(size, step, begin);
-    const idxToHide = getRandomNumFromIntervalIncl(0, size - 1);
+    const firstElem = getRandomNum();
+    const progression = getProgressionSequence(length, step, firstElem);
+    const idxToHide = getRandomNumFromIntervalIncl(0, length - 1);
 
     correctAnswers.push(progression[idxToHide].toString());
 
     progression[idxToHide] = '..';
 
-    tasks.push(progression.join(' '));
+    questions.push(progression.join(' '));
   }
 
-  return [tasks, correctAnswers];
+  return [questions, correctAnswers];
 };
 
 export default () => {
   const description = 'What number is missing in the progression?';
 
-  const tasksAndAnswers = getTasksAndCorrectAnswers();
+  const questionsAndAnswers = getQuestionsAndCorrectAnswers();
 
-  playGame(description, tasksAndAnswers);
+  playGame(description, questionsAndAnswers);
 };
