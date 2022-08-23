@@ -10,4 +10,10 @@ const getRandomNumbersSequence = (count, maxNumLimit = 100) => {
   return sequence;
 };
 
-export { getRandomNum, getRandomNumbersSequence };
+const getRandomNumFromIntervalIncl = (min, max) => {
+  const range = max - min + 1;
+
+  return Math.floor(Math.random() * range + min);
+};
+
+export { getRandomNum, getRandomNumbersSequence, getRandomNumFromIntervalIncl };

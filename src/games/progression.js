@@ -1,11 +1,5 @@
 import { roundsCount, playGame } from '../index.js';
-import { getRandomNum } from '../utils.js';
-
-const getRandomNumFromIntervalIncl = (min, max) => {
-  const range = max - min + 1;
-
-  return Math.floor(Math.random() * range + min);
-};
+import { getRandomNum, getRandomNumFromIntervalIncl } from '../utils.js';
 
 const getProgressionSequence = (length, step, firstElem) => {
   const progression = [];
